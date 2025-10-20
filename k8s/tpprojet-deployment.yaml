@@ -14,22 +14,16 @@ spec:
     spec:
       containers:
         - name: tpprojet
-          image: wassim32/spring-backend:latest   # ton image sur Docker Hub
+          image: ines10/tpprojettpprojet:latest
           ports:
             - containerPort: 8089
           env:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:mysql://mysql:3306/TPProjet?createDatabaseIfNotExist=true
             - name: SPRING_DATASOURCE_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-secret
-                  key: mysql-user
+              value: root
             - name: SPRING_DATASOURCE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-secret
-                  key: mysql-password
+              value: ""
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: update
             - name: SERVER_PORT
