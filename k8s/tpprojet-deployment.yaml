@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: tpprojet
-          image: wassim32/spring-backend:latest   # ton image sur Docker Hub
+          image: ines10/tpprojet:latest   # ton image sur Docker Hub
           ports:
             - containerPort: 8089
           env:
